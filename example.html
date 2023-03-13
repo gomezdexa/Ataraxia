@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3fd0fcadef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script src="script.js"></script>
+
+  <div id = "sidebar" class = "Sidebar">
+    <br/>
+    <a href = "javascript:void(0)" onclick = "Close()" class = "Close"><i class="fa-solid fa-xmark fa-2x"></i></a>
+    <br/>
+    <br/>
+    <br/>
+    <a href = "womens.html" class = "Links">Women</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <a href = "mens.html" class = "Links">Men</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <a href = "accessories.html" class = "Links">Accessories</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <a href = "shoes.html" class = "Links">Shoes</a>
+  </div>
+
+  <table id = "header">
+    <tr>
+      <td id = "buttonn">
+        <a href = "javascript:void(0)" class = "Open" onclick = "Open()"><i class="fa-solid fa-bars fa-2x"></i></a>
+      </td>
+
+      <td align = "center">
+        <h1 class = "Logo">Ataraxia</h1>
+      </td>
+
+      <td align = "right">
+        <img src = "images/LOGO.png" width = "50px" height = "50px"/>
+      </td>
+    </tr>
+  </table>
+
+  <div id = "space1"></div>
+
+  <table id = "productCont">
+    <tr>
+      <td>
+        <div id = "container">
+          <div id = "slides">
+            <img src = "dress.PNG" style = "width:100%">
+          </div>
+
+          <div id = "slides">
+            <img src = "dress2.PNG" style = "width:100%">
+          </div>
+
+          <div id = "slides">
+            <img src = "dress3.PNG" style = "width:100%">
+          </div>
+
+          <div id = "slides">
+            <img src = "dress4.PNG" style = "width:100%">
+          </div>
+
+          <a id = "prev" onclick = "plusSlides(-1)"><</a>
+          <a id = "next" onclick = "plusSlides(1)">></a>
+
+          <div id = "row">
+            <div id = "column">
+              <img id = "demo" src = "dress.PNG" style = "width:100%">
+            </div>
+
+            <div id = "column">
+              <img id = "demo" src = "dress2.PNG" style = "width:100%">
+            </div>
+
+            <div id = "column">
+              <img id = "demo" src = "dress3.PNG" style = "width:100%">
+            </div>
+
+            <div id = "column">
+              <img id = "demo" src = "dress4.PNG" style = "width:100%">
+            </div>
+          </div>
+        </div>
+      </td>
+
+      <td>
+        <h1>Product Name</h1>
+        <h2>Product Price</h2>
+
+        <h4>Sizes</h4>
+        <div id = "cont">
+        <button id = "sizesXS" onclick = "validateButton('XS','sizesXS')">XS(2)</button>
+        <button id = "sizesS" onclick = "validateButton('S','sizesS')">S(4)</button>
+        <button id = "sizesM" onclick = "validateButton('M','sizesM')">M(6)</button>
+        <button id = "sizesL" onclick = "validateButton('L','sizesL')">L(8)</button>
+        </div>
+          
+        <br>
+        <button id = "addToCart" onclick = "addItems(1)">Add to cart</button>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

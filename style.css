@@ -1,0 +1,431 @@
+body {
+  background-color: #0E402D;
+}
+
+#header {
+  width: 100%;
+  height: 70px;
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+#buttonn{
+  padding: 10px;
+}
+
+.Logo{
+  color: #295135;
+  font-family: 'Sacramento', cursive;
+}
+
+.Sidebar {
+  background-image: url("images/navbar.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  width:0;
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.Close{
+  color: black;
+}
+
+.Open {
+  color: black;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.Links{
+  position: absolute;
+  left: 10px;
+}
+
+.Sidebar .Close{
+  position: absolute;
+  top: 5;
+  left: 68px;
+  
+}
+
+/*These are for styling the photos at the beginning*/
+#Whole{
+  width: 100%;
+  height: 600px;
+}
+
+#div1 {
+  width:60px;
+  height: 400px;
+  display: inline-block;
+}
+
+#pic1{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#space{
+  padding: 10px;
+  display: inline-block;
+}
+
+.space{
+  padding: 10px;
+  display: inline-block;
+}
+
+#div2{
+  width:450px;
+  height: 400px;
+  display: inline-block;
+}
+
+#pic2{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#div3{
+  width: 680px;
+  height:400px;
+  display: inline-block;
+  transition: .5s;
+}
+
+#pic3{
+  width:100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+#div4{
+  width:700px;
+  height:200px;
+  display: inline-block;
+}
+
+#pic4{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#div5{
+  width:490px;
+  height:200px;
+  display: inline-block;
+}
+
+#pic5{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#div3:hover{
+  width:100%;
+  height:600px;
+  transition: 0.5s;
+}
+
+#div3:hover ~ div{
+  width:0%;
+  height:0px;
+  transition: 0.5s;
+}
+
+#div1:hover{
+  width:100%;
+  height:600px;
+  transition: 0.5s;
+}
+
+#div1:hover ~ div{
+  width:100%;
+  height:600px;
+  transition: 0.5s;
+}
+
+#main{
+  background-color: #5A6650;
+  margin: auto;
+  padding: 10px;
+}
+
+#card{
+  background-color: white;
+  padding:10px;
+  cursor: pointer;
+}
+
+
+
+
+#cardimage{
+  height:260px;
+  width:170px;
+}
+
+
+
+
+#space1{
+  padding:40px;
+}
+
+#productCont{
+  background-color: white;
+  margin: auto;
+  padding:20px;
+}
+
+#cont button{
+  border-radius: 40%;
+  padding:10px;
+  text-align: center;
+  display:inline-block;
+  cursor: pointer;
+  background-color:white;
+}
+
+#addToCart{
+  border-radius: 5px;
+  padding:10px;
+  border: none;
+  text-align: center;
+  width:300px;
+  cursor: pointer;
+}
+
+#addToCart1{
+  border-radius: 5px;
+  padding:10px;
+  border: none;
+  text-align: center;
+  width:170px;
+  cursor: pointer;
+  background-color: #eceaea;
+}
+
+.addToCart1{
+  border-radius: 5px;
+  padding:10px;
+  border: none;
+  text-align: center;
+  width:170px;
+  cursor: pointer;
+  background-color: #eceaea;
+}
+
+
+
+#addToCart:hover{
+  background-color: #6a955b;
+}
+
+#addToCart1:hover{
+  background-color: #6a955b;
+}
+
+#container{
+  position:relative;
+}
+
+#slides{
+  display:none;
+}
+
+#prev,#next{
+  position:absolute;
+  top:40%;
+  width:auto;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+#next{
+  right:0;
+}
+
+#row:after{
+  content: "";
+  display:table;
+  clear:both;
+}
+
+#column{
+  float:left;
+  width:25%;
+}
+
+#demo{
+  opacity: 0.5;
+}
+
+.active, #demo:hover{
+  opacity:1;
+}
+
+#cartButton{
+  bottom: 10px;
+  right: 5px;
+  border: none;
+  background-color:transparent;
+  position:fixed;
+  cursor: pointer;
+  color: #1cca50;
+}
+
+.CartCard{
+  background-color:white;
+  height: 100%;
+  width:0;
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+
+#bottomthingie{
+  position:absolute;
+  left:30px;
+  border: 5px solid #6a955b;
+  width: 88.5%;
+  background-color: white;
+}
+
+.CartCard .CartClose{
+  color:black;
+  position:absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#sizeCont button{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  padding: 3px;
+  width: 40px;
+  background-color: #eceaea;
+  
+}
+
+#sizeCont button:hover{
+background-color: #6a955b;
+}
+
+#CartText {
+  position: absolute;
+  top: 10px;
+  left: 125px;
+  padding:10px;
+}
+
+#items{
+  top: 10px;
+  left: 10px;
+  padding:30px;
+  
+}
+
+.cartText{
+  font-family: Arial, sans-serif;
+}
+
+p{
+  font-family: Arial, sans-serif;
+}
+
+.itemDiv{
+  border: solid #6a955b;
+  border-width: 5px 5px 1px 5px;
+  padding:10px;
+  width: 98%;
+  background-color: white;
+  display:table;
+}
+
+
+.NAMEDIV{
+  display:table-cell;
+  width:50%;
+}
+
+.SIZEDIV{
+  display:table-cell;
+  text-align:center;
+  width:10%;
+}
+
+.PRICEDIV{
+  display:table-cell;
+  text-align:center;
+  width:10%;
+}
+
+.BUTTONDIV{
+  display:table-cell;
+  text-align:right;
+  width:10%;
+}
+
+.IMGDIV{
+  display:table-cell;
+  position:relative
+}
+
+.prod_img{
+  width:30px;
+  height:50px;
+  position:absolute;
+  bottom:0;
+}
+
+.closeButton{
+  color:black;
+  text-decoration:none;
+  
+}
+
+#cartNotif{
+  background-color:white;
+  text-align: center;
+  border: solid 5px #6a955b;
+  opacity:.7;
+  position: fixed;
+  bottom: 10px;
+  right:0;
+  height: 100px;
+  width:0px;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index:5;
+}
+
+#notifCloseButton{
+  color:green;
+  float:left;
+}
+
+
