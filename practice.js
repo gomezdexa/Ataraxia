@@ -42,10 +42,16 @@ let products = [
 ];
 
 let sizeButton = false;
-let Size;
+let size;
 let color;
-let prodID;
-
+let check = false;
+//let prodID;
+var l = "producID";
+var j = "xs";
+var m = "m";
+var x = "l";
+var s = "s";
+let cart = ["Cart is empty"];
 //Click size button
 //Store the size and the fact that a size has been chosen
 //color that button
@@ -56,9 +62,15 @@ let prodID;
 
 window.onload = function(){
   //NEED TO FIX VALIDATING BUTTON AND ALL THAT JAZZ AND NEED TO FIGURE OUT HOW TO MAKE EVERY BUTTON TAKE A UNIQUE ID FOR THAT SPECIFIC ADD TO CART BUTTON. NEED TO FIGURE OUT HOW TO MAKE SPACING CONSISTENT WITHIN THE INDICIDUAL CARDS (COULD MAKE THE CARDS TALLER AND THEN PUT THE BUTTONS AT THE BOTTOM OF THE CARDS SO THAT THEY'RE ALL IN THE SAME PLACE AND THE SPACING IS JUST DIFFERENT FOR EACH CARD. )
+  
   for(var i = 0; i < products.length; i++){
     //Decides where things should be loaded dependent on the key at the end of the product
-    var k = i;
+    //var k = i;
+    eval('var ' + l + i + '= ' + i +';');
+    eval('var ' + j + i + '= ' + "xs" + i +';');
+    eval('var ' + s + i + '= ' + "s" + i +';');
+    eval('var ' + x + i + '= ' + "l" + i +';');
+    eval('var ' + m + i + '= ' + "m" + i +';');
     
     if(products[i][5] == "w"){
       var element = document.getElementById("thingieW");
@@ -114,6 +126,8 @@ window.onload = function(){
     
     var addCart = document.createElement("button");
     addCart.className = "addToCart1";
+    addCart.setAttribute("id", eval(l+i));
+    addCart.addEventListener('click', addtoCart);
     buttonsDiv.appendChild(addCart);
     var addCartTxt = document.createTextNode("Add to Cart");
     addCart.appendChild(addCartTxt);
@@ -127,13 +141,19 @@ window.onload = function(){
     sizeButtons.appendChild(xsButton);
     var xsTxt = document.createTextNode("XS");
     xsButton.appendChild(xsTxt);
+    //xsButton.setAttribute("id", "xs");
+    xsButton.setAttribute("id", j+i);
+    xsButton.addEventListener("click", sizeChecker);
 
     var sButton = document.createElement("button");
-    addCart.addEventListener('click', showID);
+
     sButton.className = "small";
     sizeButtons.appendChild(sButton);
     var sTxt = document.createTextNode("S");
     sButton.appendChild(sTxt);
+    //sButton.setAttribute("id", "s");
+    sButton.setAttribute("id", s+i);
+    sButton.addEventListener("click", sizeChecker);
     
 
     var mButton = document.createElement("button");
@@ -141,12 +161,18 @@ window.onload = function(){
     sizeButtons.appendChild(mButton);
     var mTxt = document.createTextNode("M");
     mButton.appendChild(mTxt);
+    //mButton.setAttribute("id", "m");
+    mButton.setAttribute("id", m+i);
+    mButton.addEventListener("click", sizeChecker);
 
     var lButton = document.createElement("button");
     lButton.className = "large";
     sizeButtons.appendChild(lButton);
     var lTxt = document.createTextNode("L");
     lButton.appendChild(lTxt);
+    //lButton.setAttribute("id", "l");
+    lButton.setAttribute("id", x+i);
+    lButton.addEventListener("click", sizeChecker);
     
     buttonsDiv.appendChild(sizeButtons);
     prodCont.appendChild(buttonsDiv);
@@ -159,10 +185,74 @@ window.onload = function(){
   }
 }
 
-for(var x = 0; x < document.getElementsByClassName('small').length; x++){
+/*for(var x = 0; x < document.getElementsByClassName('small').length; x++){
   document.getElementsByClassName('small')[x].setAttribute('id', 'small' + x);
+}*/
+
+function sizeChecker(){
+  //alert(this.id);
+  check = true;
+  size = document.getElementById(this.id).className;
+  var ID = this.id;
+  //alert(size);
+  let num = ID.replace(/[^0-9]/g, '');
+  //let elements = document.querySelectorAll('button.med, button.xsmall, button.large, button.small');
+  let buttons = document.getElementsByClassName("xsmall");
+  let buttonss = document.getElementsByClassName("small");
+  let buttonsss = document.getElementsByClassName("med");
+  let buttonssss = document.getElementsByClassName("large");
+  //alert(num + buttons[0]);
+  //buttons[0].style.backgroundColor = "black";
+  for(let v = 0; v < buttons.length; v++){
+    if(buttons[v].id.includes(num)){
+      buttons[v].style.backgroundColor = "#eceaea";
+    }
+  }
+  for(let v = 0; v < buttonss.length; v++){
+    if(buttonss[v].id.includes(num)){
+      buttonss[v].style.backgroundColor = "#eceaea";
+    }
+  }
+  for(let v = 0; v < buttonsss.length; v++){
+    if(buttonsss[v].id.includes(num)){
+      buttonsss[v].style.backgroundColor = "#eceaea";
+    }
+  }
+  for(let v = 0; v < buttonssss.length; v++){
+    if(buttonssss[v].id.includes(num)){
+      buttonssss[v].style.backgroundColor = "#eceaea";
+    }
+  }
+  
+  //let num = ID.match(/\d/g);
+  //num = num.join("");
+  //let elements = document.querySelectorAll('btn');
+  document.getElementById(this.id).style.backgroundColor = "green";
+
 }
 
+function addtoCart(){
+
+  let item = [];
+  
+  if(check == false){
+    alert("You must select a size first!");
+  } else {
+    item.push(this.id);
+    item.push(size);
+
+    if(cart[0] == "Cart is empty"){
+      cart = [item];
+    } else {
+      cart.push(item);
+      //window.alert(cart);
+    }
+  }
+  
+  
+  
+  //window.alert(this.id);
+}
 
 function showID(){
   window.alert(this.id);
